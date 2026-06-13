@@ -1,0 +1,19 @@
+meta {
+  name: Verify Payment
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:5000/api/payment/verify-payment
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "razorpay_order_id": "order_T18NZ9yUAiXBLR",
+    "razorpay_payment_id": "pay_T18XycSBwcYbn8",
+    "razorpay_signature": "3bbd826edbec7ffc13e4de3bcb6c2425404767645a177fdced9ea6f5e587c42d"
+  }
+}
