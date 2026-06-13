@@ -16,7 +16,7 @@ function Products() {
   const fetchFoods = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/foods"
+        `${import.meta.env.VITE_API_URL}/api/foods`
       );
 
       setFoods(res.data);

@@ -15,7 +15,7 @@ function Cart() {
   const handlePayment = async () => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/payment/create-order",
+      `${import.meta.env.VITE_API_URL}/api/payment/create-order`,
       {
         amount: total,
       }
@@ -43,7 +43,7 @@ function Cart() {
       handler: async function (response) {
   try {
     const verifyResponse = await axios.post(
-      "http://localhost:5000/api/payment/verify-payment",
+      `${import.meta.env.VITE_API_URL}/api/payment/verify-payment`,
       {
         ...response,
         amount: total,
